@@ -1,0 +1,25 @@
+{
+  "name": "foodkart",
+  "version": "1.0.0",
+  "description": "Food delivery app",
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "foodkart",
+    "food delivery"
+  ],
+  "author": "Roronoa Zoro",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  }
+}
