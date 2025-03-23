@@ -1,0 +1,39 @@
+.res-card {
+  height: 325px;
+  width: 200px;
+  background: #f0f0f0;
+  overflow: hidden;
+  border-radius: 5;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    // box-shadow: 0 0 10px #bbb8b9;
+  }
+  .res-img {
+    padding: 2px;
+    img {
+      width: 100%;
+    }
+  }
+  .res-name {
+    font-weight: 600;
+  }
+  .res-details {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    .res-review {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      .res-rating {
+        display: flex;
+        align-items: center;
+        img {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}

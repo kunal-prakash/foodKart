@@ -1,12 +1,13 @@
-import "./index.scss";
-import MainHeader from "./Components/Header/MainHeader";
-import MainContainer from "./Components/MainContent/MainContainer";
+import './index.scss';
+import MainContainer from './Components/MainContent/MainContainer';
+import Layout from './Layout';
 
 export default function App() {
   return (
     <>
-      <MainHeader />
-      <MainContainer />
+      <Layout>
+        <MainContainer />
+      </Layout>
     </>
   );
 }
