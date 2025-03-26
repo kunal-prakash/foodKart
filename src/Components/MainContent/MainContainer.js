@@ -15,8 +15,10 @@ export default function MainContainer() {
   return (
     <div className="mainContainer">
       {restaurantList?.products?.map((restaurant) => {
-        const { id, title, price, rating, images } = restaurant;
-        return <RestaurantCard restaurant={{ id, title, price, rating, images }} key={id}></RestaurantCard>;
+        const { id, title, price, rating, images, description } = restaurant;
+        return (
+          <RestaurantCard restaurant={{ id, title, price, rating, images, description }} key={id}></RestaurantCard>
+        );
       })}
     </div>
   );
