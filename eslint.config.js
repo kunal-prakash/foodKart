@@ -1,8 +1,6 @@
 // eslint.config.js
-const eslintRecommended = require('eslint/use-at-your-own-risk');
 const reactPlugin = require('eslint-plugin-react');
 const prettierPlugin = require('eslint-plugin-prettier');
-const prettierConfig = require('eslint-config-prettier');
 
 module.exports = [
   {
@@ -20,10 +18,9 @@ module.exports = [
         sourceType: 'module',
       },
     },
-    extends: [prettierConfig],
     rules: {
-      ...eslintRecommended.rules,
       ...reactPlugin.configs.recommended.rules,
+      ...prettierPlugin.configs.recommended.rules,
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
       'prettier/prettier': 'error',
