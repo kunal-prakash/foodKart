@@ -1,5 +1,5 @@
 import MainFooter from './Components/Footer/MainFooter';
-import MainHeader from './Components/Header/MainHeader';
+import MainHeader from './components/Header/MainHeader';
 
 export default function Layout({ children }) {
   return (

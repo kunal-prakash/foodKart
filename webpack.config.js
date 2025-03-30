@@ -15,6 +15,7 @@ module.exports = {
       watch: true, // Watch for changes in static files
     },
   },
+  devtool: 'inline-source-map', // Generate source maps for debugging
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html', // Use your existing index.html as a template

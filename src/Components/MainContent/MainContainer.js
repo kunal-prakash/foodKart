@@ -1,25 +1,30 @@
-import RestaurantCard from './RestaurantCard/RestaurantCard';
 import { RESTAURANT_LIST } from '../../utils/apis';
-import { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+import Search from '../Search';
+const RestaurantList = React.lazy(() => import('./RestaurantCard/RestaurantList'));
 
 export default function MainContainer() {
   const [restaurantList, setRestaurantList] = useState([]);
+  const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
 
   useEffect(() => {
     fetch(RESTAURANT_LIST)
       .then((res) => res.json())
-      .then((data) => setRestaurantList(data))
+      .then((data) => {
+        setRestaurantList(data.products);
+        setFilteredRestaurantList(data.products);
+      })
       .catch((err) => console.log(err));
   }, []);
 
   return (
-    <div className="mainContainer">
-      {restaurantList?.products?.map((restaurant) => {
-        const { id, title, price, rating, images, description } = restaurant;
-        return (
-          <RestaurantCard restaurant={{ id, title, price, rating, images, description }} key={id}></RestaurantCard>
-        );
-      })}
-    </div>
+    <>
+      <Search setFilteredRestaurantList={setFilteredRestaurantList} restaurantList={restaurantList} />
+      <div className="mainContainer">
+        <Suspense fallback={<div>Loading...</div>}>
+          <RestaurantList restaurantList={filteredRestaurantList} />
+        </Suspense>
+      </div>
+    </>
   );
 }

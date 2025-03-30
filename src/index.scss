@@ -7,44 +7,16 @@ li {
   list-style: none;
 }
 
-// header {
-//   padding: 10px 20px 5px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   background-color: green;
-// }
-
-// .logo {
-//   img {
-//     // background-color: #fff;
-//     border: 2px solid #fff;
-//     border-radius: 30%;
-//   }
-// }
-
-// .search {
-//   input {
-//     height: 30px;
-//   }
-//   button {
-//     height: 35px;
-//   }
-// }
-
-// .headNavigations {
-//   ul {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-// }
-
 .mainContainer {
   width: 100%;
   height: fit-content;
   padding: 5px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-content: flex-start;
+}
+
+.search {
+  padding: 10px;
 }
