@@ -1,15 +1,15 @@
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 30% 70%;
   padding: 16px;
   background-color: green;
-  align-items: center;
 }
 
 .headNavigations {
   ul {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     li {
       padding: 0px 5px;
     }

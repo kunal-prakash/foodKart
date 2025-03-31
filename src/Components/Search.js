@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 export default function Search(props) {
-  const { setFilteredRestaurantList, restaurantList } = props;
+  const { setFilteredProductList, productList } = props;
   const [searchValue, setSearchValue] = useState('');
   const filterResult = () => {
-    const searchResult = restaurantList.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()));
+    const searchResult = productList.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()));
 
-    setFilteredRestaurantList(searchResult);
+    setFilteredProductList(searchResult);
   };
   return (
     <div className="search">

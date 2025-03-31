@@ -5,6 +5,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js', // Entry point for your app
   output: {
+    publicPath: '/', // Base path for all assets
     path: path.resolve(__dirname, 'dist'), // Output directory
     clean: true, // Clean the output directory before each build
   },
@@ -14,6 +15,7 @@ module.exports = {
       directory: path.resolve(__dirname, 'public'), // Serve static files from 'public'
       watch: true, // Watch for changes in static files
     },
+    historyApiFallback: true, // To be enabled for handling routing in React
   },
   devtool: 'inline-source-map', // Generate source maps for debugging
   plugins: [
@@ -43,15 +45,7 @@ module.exports = {
       },
       {
         test: /.(png|jpg|jpeg|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              outputPath: 'images/',
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
     ],
   },

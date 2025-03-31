@@ -1,7 +1,7 @@
-import star from '../../../../public/images/star.png';
+import star from '../../../../../public/images/star.png';
 
-export default function RestaurantDetails(props) {
-  const { title, rating = '-', description } = props.restaurant;
+export default function ProductDetails(props) {
+  const { title, rating = '-', description } = props.product;
   return (
     <div className="res-details">
       <div className="res-name">{title}</div>

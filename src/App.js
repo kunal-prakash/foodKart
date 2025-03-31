@@ -1,13 +1,13 @@
 import React from 'react';
 import './index.scss';
-import MainContainer from './components/MainContent/MainContainer';
-import Layout from './Layout';
+import Layout from './components/Layout';
+import { Outlet } from 'react-router-dom';
 
 export default function App() {
   return (
     <>
       <Layout>
-        <MainContainer />
+        <Outlet />
       </Layout>
     </>
   );
