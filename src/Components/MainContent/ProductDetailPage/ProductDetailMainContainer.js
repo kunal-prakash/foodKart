@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { ALL_PRODUCTS_API } from '../../../utils/apis';
 import { useParams } from 'react-router-dom';
+import useProductDetail from '../../../utils/useProductDetail';
 
 export default function ProductDetailMainContainer() {
   const { productId } = useParams();
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const response = await fetch(`${ALL_PRODUCTS_API}/${productId}`);
-    const data = await response.json();
-    setProduct(data);
-  };
-  return <>{product ? product.title : 'Loading...'}</>;
+  const product = useProductDetail(productId);
+  return (
+    <>
+      {product ? (
+        <div className="mainContainer">
+          <h1>{product.title}</h1>
+          <h2>{`$${product.price}`}</h2>
+        </div>
+      ) : null}
+    </>
+  );
 }

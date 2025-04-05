@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../../utils/useOnlineStatus';
 
 export default function HeaderNavigations() {
   const [loginState, setLoginState] = useState('Log In');
+  const isOnline = useOnlineStatus();
   return (
     <div className="headNavigations">
       <ul>
+        <li>Online Status: {isOnline ? '✅' : '🔴'}</li>
         <li>
           <Link to="/">Home</Link>
         </li>
