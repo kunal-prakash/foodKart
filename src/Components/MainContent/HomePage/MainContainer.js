@@ -21,7 +21,7 @@ export default function MainContainer() {
   return (
     <>
       <Search setFilteredProductList={setFilteredProductList} productList={productList} />
-      <div className="mainContainer">
+      <div className="flex justify-start flex-wrap">
         <ProductList productList={filteredProductList} displayedProducts={displayedProducts} />
       </div>
     </>

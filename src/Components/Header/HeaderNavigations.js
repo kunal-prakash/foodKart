@@ -6,25 +6,26 @@ export default function HeaderNavigations() {
   const [loginState, setLoginState] = useState('Log In');
   const isOnline = useOnlineStatus();
   return (
-    <div className="headNavigations">
-      <ul>
-        <li>Online Status: {isOnline ? '✅' : '🔴'}</li>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li>Cart</li>
-        <li>
-          <button onClick={() => (loginState === 'Log In' ? setLoginState('Log Out') : setLoginState('Log In'))}>
-            {loginState}
-          </button>
-        </li>
-      </ul>
-    </div>
+    <ul className="flex justify-around items-center m-5">
+      <li className="px-2">Online Status: {isOnline ? '✅' : '🔴'}</li>
+      <li className="px-2">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="px-2">
+        <Link to="/about">About</Link>
+      </li>
+      <li className="px-2">
+        <Link to="/contact">Contact</Link>
+      </li>
+      <li className="px-2">Cart</li>
+      <li className="px-2">
+        <button
+          className="cursor-pointer"
+          onClick={() => (loginState === 'Log In' ? setLoginState('Log Out') : setLoginState('Log In'))}
+        >
+          {loginState}
+        </button>
+      </li>
+    </ul>
   );
 }

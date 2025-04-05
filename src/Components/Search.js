@@ -9,8 +9,9 @@ export default function Search(props) {
     setFilteredProductList(searchResult);
   };
   return (
-    <div className="search">
+    <div className="m-4">
       <input
+        className="px-1 border border-solid border-black"
         type="text"
         value={searchValue}
         onChange={(e) => {
@@ -20,7 +21,9 @@ export default function Search(props) {
           if (e.key === 'Enter') filterResult();
         }}
       />
-      <button onClick={filterResult}>Search</button>
+      <button className="mx-2 px-4 bg-cyan-100 border rounded-lg hover:cursor-pointer" onClick={filterResult}>
+        Search
+      </button>
     </div>
   );
 }
