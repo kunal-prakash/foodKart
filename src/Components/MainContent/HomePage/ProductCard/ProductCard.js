@@ -19,8 +19,8 @@ export const withFastSellingLabel = (ProductCard) => {
     );
   };
 
-  //displayName for better debugging
-  WrappedComponent.displayName = `WithFastSellingLabel(${ProductCard.title || 'Component'})`;
+  //displayName for better debugging of HOC
+  WrappedComponent.displayName = `WithFastSellingLabel(${ProductCard.displayName || ProductCard.name || 'Component'})`;
 
   return WrappedComponent;
 };

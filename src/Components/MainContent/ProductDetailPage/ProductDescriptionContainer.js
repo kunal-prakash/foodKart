@@ -1,4 +1,5 @@
 import starImage from '../../../../public/images/star.png';
+import FaqMainContainer from '../../ReusableComponents/FAQ/FaqMainContainer';
 
 export default function ProductDescriptionContainer(props) {
   const { product } = props;
@@ -47,11 +48,23 @@ export default function ProductDescriptionContainer(props) {
       </div>
       <div className="w-[100%]">
         <p className="block text-xl">Reviews:</p>
-        {product.description ?? ''}
+        {product.reviews?.length > 0 ? (
+          <FaqMainContainer data={faqData(product.reviews, 'reviewerName', 'comment')} type="oneOpen" />
+        ) : null}
       </div>
     </div>
   );
 }
+
+const faqData = (data, quesKey, ansKey) => {
+  return data.map((item, index) => {
+    return {
+      key: item[quesKey] || index,
+      ques: item[quesKey],
+      ans: item[ansKey],
+    };
+  });
+};
 
 const productPrice = (discount, price) => {
   if (!price) {
