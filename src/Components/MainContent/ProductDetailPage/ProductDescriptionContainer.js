@@ -1,8 +1,15 @@
+import { useDispatch } from 'react-redux';
 import starImage from '../../../../public/images/star.png';
 import FaqMainContainer from '../../ReusableComponents/FAQ/FaqMainContainer';
+import { addItem } from '../../../utils/cartSlice';
 
 export default function ProductDescriptionContainer(props) {
   const { product } = props;
+  const dispatch = useDispatch();
+  const handleAddToCart = (item) => {
+    dispatch(addItem({ id: item.id, name: item.title, price: item.price, image: item.images[0] }));
+  };
+
   return (
     <div className="px-4 flex flex-wrap items-start gap-2">
       <h1 className="w-[100%] font-semibold text-2xl">{product.title}</h1>
@@ -10,6 +17,12 @@ export default function ProductDescriptionContainer(props) {
         <img className="inline" src={starImage} /> {product.rating ?? '-'}/5
       </div>
       <div className="w-[100%]">{productPrice(product.discountPercentage, product.price)}</div>
+      <button
+        className="my-2 p-3 max-w-fit bg-cyan-100 rounded-l font-medium text-sm hover:transform-3d hover:scale-105 cursor-pointer"
+        onClick={() => handleAddToCart(product)}
+      >
+        + Add to Cart
+      </button>
       <div className="w-[100%]">
         <p className="block text-xl">Description:</p>
         {product.description ?? ''}
