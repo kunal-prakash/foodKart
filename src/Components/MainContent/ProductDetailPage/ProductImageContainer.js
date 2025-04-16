@@ -26,7 +26,6 @@ const ImageThumbnails = (props) => {
             }}
             onMouseOver={() => {
               setSeletedImage(image);
-              console.log('hi');
             }}
             key={image + index}
             src={image}

@@ -28,7 +28,7 @@ const CartItem = ({ item }) => {
     <div className="h-20 flex justify-between border border-gray-300 m-2 p-2 rounded-lg shadow-md">
       <img className="inline" src={item.image} alt={`${item.name} image`} />
       <div className="text-center my-4">{item.name}</div>
-      <div className="text-center m-2">
+      <div className="text-center m-2" data-testid="cart_item_quantity">
         <button
           className="px-2 m-2 bg-gray-300"
           onClick={() => {

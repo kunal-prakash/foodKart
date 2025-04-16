@@ -13,6 +13,7 @@ export default function Search(props) {
       <input
         className="px-1 border border-solid border-black"
         type="text"
+        data-testid="search-input"
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
